@@ -1,0 +1,55 @@
+[workspace]
+resolver = "2"
+members = [
+    "src-tauri",
+    "crates/security-core",
+    "crates/security-policy",
+    "crates/security-storage",
+    "crates/security-scanner",
+    "crates/security-telemetry",
+    "crates/ai-decisions",
+    "crates/ai-local",
+    "crates/windows-integration",
+    "crates/security-ipc",
+    "services/security-service",
+]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2021"
+license = "MIT"
+authors = ["AI Antivirus contributors"]
+repository = "https://github.com/local/ai-antivirus"
+
+[workspace.dependencies]
+security-core = { path = "crates/security-core" }
+security-policy = { path = "crates/security-policy" }
+security-storage = { path = "crates/security-storage" }
+security-scanner = { path = "crates/security-scanner" }
+security-telemetry = { path = "crates/security-telemetry" }
+ai-decisions = { path = "crates/ai-decisions" }
+ai-local = { path = "crates/ai-local" }
+windows-integration = { path = "crates/windows-integration" }
+security-ipc = { path = "crates/security-ipc" }
+
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+anyhow = "1"
+chrono = { version = "0.4", features = ["serde"] }
+tokio = { version = "1.48", features = ["rt-multi-thread", "macros", "sync", "time", "net", "io-util", "process"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+sha2 = "0.10"
+hex = "0.4"
+uuid = { version = "1", features = ["v4", "serde"] }
+rusqlite = { version = "0.40", features = ["bundled", "serde_json"] }
+yara-x = { version = "1.21", default-features = false, features = ["pe-module", "hash-module", "math-module", "string-module", "time-module"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls", "gzip"] }
+async-trait = "0.1"
+futures = "0.3"
+tempfile = "3"
+walkdir = "2"
+base64 = "0.22"
+parking_lot = "0.12"
+windows = { version = "0.62.2" }
