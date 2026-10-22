@@ -1,0 +1,25 @@
+[package]
+name = "ai-local"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Runtime hardware detection and local inference routing interfaces."
+
+[dependencies]
+security-core = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+
+[target.'cfg(windows)'.dependencies]
+windows = { workspace = true, features = [
+    "Win32_Foundation",
+    "Win32_System_SystemInformation",
+    "Win32_System_Power",
+    "Win32_Graphics_Dxgi",
+    "Win32_Graphics_Dxgi_Common",
+] }
+
+[dev-dependencies]
+tempfile = { workspace = true }

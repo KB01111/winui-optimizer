@@ -1,0 +1,18 @@
+{
+  // Tooling-side project (Vite/Vitest configs). The app project in
+  // tsconfig.json also includes these files so that `tsc --noEmit` covers
+  // everything; this project exists for editor scoping of config files.
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true
+  },
+  "include": ["vite.config.ts", "vitest.config.ts"]
+}

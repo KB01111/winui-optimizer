@@ -1,0 +1,23 @@
+[package]
+name = "ai-decisions"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Provider-independent structured decision adapters (Jev, Mercury Decide, mock)."
+
+[dependencies]
+security-core = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+chrono = { workspace = true }
+tokio = { workspace = true }
+reqwest = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+tracing = { workspace = true }
+uuid = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["test-util"] }

@@ -1,0 +1,21 @@
+[package]
+name = "security-scanner"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "File analysis: SHA-256, PE parsing, entropy, YARA-X and Authenticode metadata."
+
+[dependencies]
+security-core = { workspace = true }
+sha2 = { workspace = true }
+hex = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+yara-x = { workspace = true }
+walkdir = { workspace = true }
+base64 = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
