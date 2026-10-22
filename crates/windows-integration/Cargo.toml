@@ -1,0 +1,33 @@
+[package]
+name = "windows-integration"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Windows-native integration: package identity, notifications, Defender status, DPAPI secrets."
+
+[dependencies]
+security-core = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+chrono = { workspace = true }
+base64 = { workspace = true }
+
+[target.'cfg(windows)'.dependencies]
+windows = { workspace = true, features = [
+    "ApplicationModel",
+    "UI_Notifications",
+    "Data_Xml_Dom",
+    "Foundation",
+    "Foundation_Collections",
+    "Win32_Foundation",
+    "Win32_System_Threading",
+    "Win32_System_ProcessStatus",
+    "Win32_System_SystemInformation",
+    "Win32_System_Power",
+    "Win32_Security",
+    "Win32_Security_Cryptography",
+] }
+
+[dev-dependencies]
+tempfile = { workspace = true }
